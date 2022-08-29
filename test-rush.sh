@@ -1,5 +1,7 @@
 printf "Testing rush-00 10 11"
 ./rush00bins/rush-00 10 11 | ../rush-2 | diff <(echo "[rush-00] [10] [11]" ) - > tmp
+lines=`wc -l < tmp`
+echo $lines
 printf "\nTesting rush-01 10 11"
 ./rush00bins/rush-01 10 11 | ../rush-2 | diff <(echo "[rush-01] [10] [11]" ) - > tmp
 printf "\nTesting rush-02 10 11"
